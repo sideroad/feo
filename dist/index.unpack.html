@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="description" content="jQuery Floating Message Plugin is display the messages easily." />
+        <meta name="keywords" content="floating message, jquery, plugin, jquery plugin, javascript, Web Design, javascript framework, Quark" />
+        <meta name="author" content="sideroad" />
+        <title>jQuery Floating Message - jQuery Plugins - sideroad</title>
+        
+        
+        
+        
+        <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+        
+        
+        
+        
+    <link type="text/css" rel="stylesheet" href="feo.ee2fa07a79a3542ad701e9b6b1c10407.css" /></head>
+    <body>
+        <div id="container">
+            <div id="head"></div>
+            <div id="body" class="contents">
+            	<h1>jQuery Floating Message Plugin</h1>
+				<div class="child-contents">
+                    <p>jQuery Floating Message Plugin is display the messages easily.</p>
+					<p>Dual licensed under the MIT or GPL Version 2 licenses.</p>
+                    <p>Requires jQuery , jQuery UI.</p>
+                    <p>Supported Browser : IE 7.x , IE 8.x , Firefox 3.x , Google Chrome2.x</p>
+                    <p>Bugs : Animation bug was occured when customize position. occur browsers are IE 7.x , IE 8.x , Google Chrome2.x</p>
+				</div>
+				
+                <h2>Tutorial</h2>
+                
+                <h3>Normal Message</h3>
+                <div class="child-contents">
+                    <p>Normal floating message.</p>
+                    <input id="demo_normal" type="button" value="Normal Message" />
+                    <pre class="brush: javascript;">
+$("input#demo_normal").click(function(){
+    $.floatingMessage("Respect jQuery.\nwrite less , do more.");
+});
+                    </pre>
+                </div>
+                
+                <h3>Width , Height</h3>
+                <div class="child-contents">
+                    <p>Customize width and height.</p>
+                    <input id="demo_width1" type="button" value="Long Width" />
+                    <input id="demo_height1" type="button" value="Long Height" />
+                    <pre class="brush: javascript;">
+$("input#demo_width1").click(function(){
+    $.floatingMessage("Looong width.",{
+        width : 500
+    });
+});
+$("input#demo_height1").click(function(){
+    $.floatingMessage("Looong height.",{
+        height : 500
+    });
+});
+                    </pre>
+                </div>
+                
+                <h3>Position</h3>
+                <div class="child-contents">
+                    <p>Setting display position.</p>
+                    <p>align : "left" or "right"</p>
+                    <p>verticalAlign : "top" or "bottom"</p>
+                    <input id="demo_position1" type="button" value="Left Top" />
+                    <input id="demo_position2" type="button" value="Left Bottom" />
+                    <input id="demo_position3" type="button" value="Right Top" />
+                    <input id="demo_position4" type="button" value="Right Bottom" />
+                    <pre class="brush: javascript;">
+$("input#demo_position1").click(function(){
+    $.floatingMessage("Left-Top Message.",{
+        position : "top-left"
+    });
+});
+$("input#demo_position2").click(function(){
+    $.floatingMessage("Left-Bottom Message.",{
+        position : "bottom-left"
+    });
+});
+$("input#demo_position3").click(function(){
+    $.floatingMessage("Right-Top Message.",{
+        position : "top-right"
+    });
+});
+$("input#demo_position4").click(function(){
+    $.floatingMessage("Right-Bottom Message.",{
+        position : "bottom-right"
+    });
+});
+                    </pre>
+                </div>
+                
+                <h3>Timer</h3>
+                <div class="child-contents">
+                    <p>Auto remove after the time.</p>
+                    <p>time : display time[msec]</p>
+                    <input id="demo_timer1" type="button" value="Display 3sec" />
+                    <input id="demo_timer2" type="button" value="Display 6sec" />
+                    <pre class="brush: javascript;">
+$("input#demo_timer1").click(function(){
+    $.floatingMessage("Display message with timer.",{
+        time:3000
+    });
+});
+$("input#demo_timer2").click(function(){
+    $.floatingMessage("Display message with timer.",{
+        time:6000
+    });
+});
+                    </pre>
+                </div>
+                
+                <h3>Effects</h3>
+                <div class="child-contents">
+                    <p>Customize effects.</p>
+                    <p>show : show Effect.</p>
+                    <p>hide : hide Effect.</p>
+                    <p>stuffEaseTime : stuff easing duration.</p>
+                    <p>stuffEaseing : stuff easing.</p>
+                    <p>moveEaseTime : move easing duration.</p>
+                    <p>moveEasing : move easing.</p>
+                    <input id="demo_effect1" type="button" value="Effect1" />
+                    <input id="demo_effect2" type="button" value="Effect2" />
+                    <pre class="brush: javascript;">
+$("input#demo_effect1").click(function(){
+    $.floatingMessage("Effect1.",{
+        show : "fold",
+        hide : "explode",
+        stuffEaseTime : 500,
+        stuffEasing : "swing",
+        moveEaseTime : 200,
+        moveEasing   : "easeInExpo"
+    });
+});
+$("input#demo_effect2").click(function(){
+    $.floatingMessage("Effect2.",{
+        show : "blind",
+        hide : "puff",
+        stuffEaseTime : 100,
+        stuffEasing : "easeInExpo",
+        moveEaseTime : 200,
+        moveEasing   : "easeOutBounce"
+    });
+});
+                    </pre>
+                </div>
+                
+                <h3>jQuery object</h3>
+                <div class="child-contents">
+                    <p>jQuery object to message.</p>
+                    <input id="demo_object1" type="button" value="jQuery Object1" />
+                    <input id="demo_object2" type="button" value="jQuery Object2" />
+                    <pre class="brush: javascript;">
+$("input#demo_object1").click(function(){
+    $('<div>Link:<a href="/" style="font-size: 30px;">sideroad.secret.jp</a></div>').floatingMessage();
+});
+$("input#demo_object2").click(function(){
+    $('<div>Image:<img src="/img/foot_mark.png" alt="Image" height="50" /></div>').floatingMessage();
+});
+                    </pre>
+                </div>
+				
+		        <script type="text/javascript">
+		            $(document.body).ready(function(){
+$("input#demo_normal").click(function(){
+	$.floatingMessage("Respect jQuery.\nwrite less , do more.");
+});
+$("input#demo_width1").click(function(){
+    $.floatingMessage("Looong width.",{
+        width : 500
+    });
+});
+$("input#demo_height1").click(function(){
+    $.floatingMessage("Looong height.",{
+        height : 500
+    });
+});
+$("input#demo_position1").click(function(){
+    $.floatingMessage("Left-Top Message.",{
+        position : "top-left"
+    });
+});
+$("input#demo_position2").click(function(){
+    $.floatingMessage("Left-Bottom Message.",{
+        position : "bottom-left"
+    });
+});
+$("input#demo_position3").click(function(){
+    $.floatingMessage("Right-Top Message.",{
+        position : "top-right"
+    });
+});
+$("input#demo_position4").click(function(){
+    $.floatingMessage("Right-Bottom Message.",{
+        position : "bottom-right"
+    });
+});
+$("input#demo_timer1").click(function(){
+    $.floatingMessage("Display message with timer.",{
+        time:3000
+    });
+});
+$("input#demo_timer2").click(function(){
+    $.floatingMessage("Display message with timer.",{
+        time:6000
+    });
+});
+$("input#demo_effect1").click(function(){
+    $.floatingMessage("Effect1.",{
+        show : "fold",
+        hide : "explode",
+        stuffEaseTime : 500,
+        stuffEasing : "swing",
+        moveEaseTime : 200,
+        moveEasing   : "easeInExpo"
+    });
+});
+$("input#demo_effect2").click(function(){
+    $.floatingMessage("Effect2.",{
+        show : "blind",
+        hide : "puff",
+        stuffEaseTime : 100,
+        stuffEasing : "easeInExpo",
+        moveEaseTime : 200,
+        moveEasing   : "easeOutBounce"
+    });
+});
+$("input#demo_object1").click(function(){
+    $('<div>Link:<a href="/" style="font-size:30px" >sideroad.secret.jp</a></div>').floatingMessage();
+});
+$("input#demo_object2").click(function(){
+    $('<div>Image:<img src="/img/foot_mark.png" alt="Image" height="50" /></div>').floatingMessage();
+});
+		            });
+		        </script>
+				<h2>Download</h2>
+                <div class="child-contents">
+                    <p class="download">
+                        <a href="https://github.com/sideroad/jquery.floatingmessage/zipball/master" class="button blue">Download</a>
+                        <a href="https://github.com/sideroad/jquery.floatingmessage" class="button blue">github</a>
+                    </p>
+                </div>
+            </div>
+            <div class="right-contents">
+                <script type="text/javascript"><!--
+                google_ad_client = "ca-pub-8130347909920286";
+                /* BigRightBanner1 */
+                google_ad_slot = "1995276592";
+                google_ad_width = 336;
+                google_ad_height = 280;
+                //-->
+                </script>
+                <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                </script>
+                <br />
+                <script type="text/javascript"><!--
+                google_ad_client = "ca-pub-8130347909920286";
+                /* BigRightBanner2 */
+                google_ad_slot = "3871654960";
+                google_ad_width = 336;
+                google_ad_height = 280;
+                //-->
+                </script>
+                <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                </script>
+                <br />
+                <script type="text/javascript"><!--
+                google_ad_client = "ca-pub-8130347909920286";
+                /* BigRightBanner3 */
+                google_ad_slot = "3807131283";
+                google_ad_width = 336;
+                google_ad_height = 280;
+                //-->
+                </script>
+                <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                </script>
+            </div>
+            <div id="foot"></div>
+        </div>
+    </body>
+
+<script charset="utf-8" src="feo.d428e040d2be8049e1250d678a31bbcb.js" type="text/javascript" ></script>
+</html>
