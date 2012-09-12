@@ -30,7 +30,7 @@ node feo.js
 ```
 
 ##Next
--HTML compaction
--Auto generate css sprite
--UTF-8 encoding page
+* HTML compaction
+* Auto generate css sprite
+* UTF-8 encoding page
 
