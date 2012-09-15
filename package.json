@@ -1,15 +1,15 @@
 {
   "name": "feo",
   "description": "Automatically optimize front-end.",
-  "version": "0.1.4",
-  "homepage": "https://github.com/sideroad/feo.js",
+  "version": "0.1.5",
+  "homepage": "https://github.com/sideroad/feo",
   "author": "sideroad <sideroad.jp@gmail.com> (http://sideroad.secret.jp/)",
   "repository": {
     "type": "git",
-    "url": "git://github.com/sideroad/feo.js.git"
+    "url": "git://github.com/sideroad/feo.git"
   },
   "bugs": {
-    "url": "https://github.com/sideroad/feo.js/issues"
+    "url": "https://github.com/sideroad/feo/issues"
   },
   "licenses": [
     {

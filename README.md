@@ -13,8 +13,7 @@ I want to simplify that. only one command.
 npm install -g feo
 ```
 
-##Usage
-Simple to use
+##Simple to use
 1.Prepare feo.json
 ```js
 {
