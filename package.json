@@ -1,7 +1,7 @@
 {
   "name": "feo",
   "description": "Automatically optimize front-end.",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "homepage": "https://github.com/sideroad/feo.js",
   "author": "sideroad <sideroad.jp@gmail.com> (http://sideroad.secret.jp/)",
   "repository": {
@@ -19,7 +19,7 @@
   ],
   "main": "feo.js",
   "bin": {
-    "feo": "bin/feo"
+    "feo": "./feo.js"
   },
   "engines": {
     "node": "*"

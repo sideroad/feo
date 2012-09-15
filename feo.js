@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var jsdom = require('jsdom'),
   async = require('async'),
   request = require('request'),

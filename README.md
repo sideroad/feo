@@ -2,7 +2,7 @@
 
 ##Install
 ```sh
-npm install feo
+npm install -g feo
 ```
 
 ##Usage
