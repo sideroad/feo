@@ -36,13 +36,13 @@ feo
 ```
 
 ##Next
-* HTML compaction
-* Auto generate css sprite
 * UTF-8 encoding page
+* Optimize html on local files
 
 ##Dependencies with amazing library
 * async
 * node-minify
+* html-minifier
 * jsdom
 * request
 

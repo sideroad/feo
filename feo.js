@@ -5,6 +5,7 @@ var jsdom = require('jsdom'),
   request = require('request'),
   fs = require('fs'),
   compressor = require('node-minify'),
+  htmlMinifier = require('html-minifier'),
   crypto = require('crypto'),
   url = require('url'),
   config = JSON.parse(fs.readFileSync('feo.json','utf8').toString().replace(/\n/g,'')) || {},
@@ -201,8 +202,15 @@ jsdom.env({
           }
         );
     },function(callback){
+
         $('head').append('<link type="text/css" rel="stylesheet" href="feo.'+csssuffix+'.css" >');
-        fs.writeFileSync(dist+'/index.unpack.html', '<!DOCTYPE html>\n<html>'+$('html').html()+'\n<script charset="utf-8" src="feo.'+jssuffix+'.js" type="text/javascript" ></script>\n</html>');
+        var html = '<!DOCTYPE html>\n<html>'+$('html').html()+'\n<script charset="utf-8" src="feo.'+jssuffix+'.js" type="text/javascript" ></script>\n</html>';
+
+        fs.writeFileSync(dist+'/index.unpack.html', html);
+        fs.writeFileSync(dist+'/index.html', htmlMinifier.minify(html,{
+          removeComments: true,
+          collapseWhitespace: true
+        }));
         
     }]);
 
