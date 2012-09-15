@@ -140,6 +140,10 @@ jsdom.env({
               console.log("Optimizing background-image :");
 
               async.map(backgroundImages, function(item, callback){
+                if(!item){
+                  callback();
+                  return;
+                }
                 console.log(item);
                 request({
                   uri : url.resolve( href, item),
@@ -181,7 +185,7 @@ jsdom.env({
           function(item, callback){
             var src = item.src,
                 suffix = (src.match(/\.([^.]+)$/)||[])[1];
-            if(!src){
+            if(!src || !/\.(jpg|gif|png|bmp)\)$/i.test(src)){
               callback();
               return;
             }
