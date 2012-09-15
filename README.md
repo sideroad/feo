@@ -1,6 +1,12 @@
 #Optimize page for making faster!!
 
-feo.json
+##Install
+```sh
+npm install feo
+```
+
+##Usage
+Prepare feo.json
 ```js
 {
     "url":"http://sideroad.secret.jp/plugins/jQueryFloatingMessage/",
@@ -24,9 +30,9 @@ feo.json
 }
 ```
 
-Execute
-```js
-node feo.js
+Execute feo
+```sh
+feo
 ```
 
 ##Next
@@ -34,3 +40,11 @@ node feo.js
 * Auto generate css sprite
 * UTF-8 encoding page
 
+##Dependencies with amazing library
+* async
+* node-minify
+* jsdom
+* request
+
+##Awesome article
+* [Generating CSS Sprites With node.js](http://iambot.net/generating-css-sprites-with-node-dot-js.html)

@@ -16,5 +16,8 @@
 	"html" : {
 		"dist" : "dist",
 		"clean" : true
+	},
+	"image" : {
+        "base64" : true
 	}
 }

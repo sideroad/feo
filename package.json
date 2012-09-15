@@ -1,0 +1,45 @@
+{
+  "name": "feo",
+  "description": "Automatically optimize front-end.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/sideroad/feo.js",
+  "author": "sideroad <sideroad.jp@gmail.com> (http://sideroad.secret.jp/)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sideroad/feo.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sideroad/feo.js/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "main": "feo.js",
+  "bin": {
+    "feo": "bin/feo"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "scripts": {
+    "test": "feo"
+  },
+  "dependencies": {
+    "async" : "~0.1.22",
+    "jsdom" : "~0.2.15",
+    "node-minify" : "~0.4.2",
+    "request" : "~2.11.1"
+  },
+  "devDependencies": {
+    "async" : "~0.1.22",
+    "jsdom" : "~0.2.15",
+    "node-minify" : "~0.4.2",
+    "request" : "~2.11.1"
+  },
+  "keywords": [
+    "feo","frontend","optimize"
+  ]
+}
