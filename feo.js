@@ -131,7 +131,7 @@ jsdom.env({
             },
             function(err, requestHeader, body){
               var backgroundImages = (body.match(/url\([^\)]+\)/g)||[]).map(function(str){
-                  if(!/\.(jpg|gif|png|bmp)\)$/i.test(str)){
+                  if(!/\.(jpg|gif|png|bmp)\)$/i.test(str.replace(/[\"\']/g,""))){
                     return "";
                   }
                   return str.match(/\(([^\)]+)\)/)[1];
@@ -146,13 +146,13 @@ jsdom.env({
                 }
                 console.log(item);
                 request({
-                  uri : url.resolve( href, item),
+                  uri : url.resolve( href, item.replace(/[\"\']/g,"")),
                   encoding : 'binary',
                   proxy : config.proxy || null
                 },function(err, request, bgBody){
-                  var suffix = (item.match(/\.([^.]+)$/)||[])[1],
+                  var suffix = (item.replace(/[\'\"]/g,"").match(/\.([^.]+)$/)||[])[1],
                       reg = new RegExp("url\\("+item+"\\)", "g");
-                  body = body.replace(reg, "url(data:image/"+suffix+";base64,"+(new Buffer(bgBody, 'binary').toString('base64'))+")");
+                  if(bgBody) body = body.replace(reg, "url(data:image/"+suffix+";base64,"+(new Buffer(bgBody, 'binary').toString('base64'))+")");
                   callback();
                 });
 
@@ -196,7 +196,7 @@ jsdom.env({
               proxy : config.proxy || null
             },
             function(err, request, body){
-              item.src = "data:image/"+suffix+";base64,"+(new Buffer(body, 'binary').toString('base64'));
+              if(body) item.src = "data:image/"+suffix+";base64,"+(new Buffer(body, 'binary').toString('base64'));
               callback();
             });
 
