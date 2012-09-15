@@ -185,7 +185,7 @@ jsdom.env({
           function(item, callback){
             var src = item.src,
                 suffix = (src.match(/\.([^.]+)$/)||[])[1];
-            if(!src || !/\.(jpg|gif|png|bmp)\)$/i.test(src)){
+            if(!src || !/\.(jpg|gif|png|bmp)$/i.test(src)){
               callback();
               return;
             }

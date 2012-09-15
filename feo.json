@@ -1,5 +1,5 @@
 {
-	"url":"http://sideroad.secret.jp/plugins/jQueryFloatingMessage/",
+	"url":"http://sideroad.secret.jp/plugins/jQuerySideBar/",
 	"js" : {
 		"compressor" : "yui-js",
 		"ignore":[
