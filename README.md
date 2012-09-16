@@ -43,6 +43,9 @@ npm install -g feo
 feo
 ```
 
+##Why output script, css files name contains hash?
+* You can set long expire time of contents.
+
 ##Next
 * For the page which is not UTF-8 encoding
 * Optimize html on local files
