@@ -6,18 +6,16 @@
 		  "http://code.jquery.com/jquery.min.js",
 		  "http://pagead2.googlesyndication.com/pagead/show_ads.js"
 		],
-		"noinline":true
+		"inline":true
 	},
 	"css" : {
 		"compressor" : "yui-css",
 		"ignore":["hoge.css"],
-		"noinline":false
-	},
-	"html" : {
-		"dist" : "dist",
-		"clean" : true
+		"inline":true
 	},
 	"image" : {
         "base64" : true
-	}
+	},
+	"dist" : "dist",
+	"clean" : true
 }

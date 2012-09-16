@@ -19,7 +19,7 @@
   ],
   "main": "feo.js",
   "bin": {
-    "feo": "./feo.js"
+    "feo": "./bin/feo"
   },
   "engines": {
     "node": "*"
@@ -32,14 +32,16 @@
     "jsdom" : "~0.2.15",
     "node-minify" : "~0.4.2",
     "request" : "~2.11.1",
-    "html-minifier" : "~0.4.5"
+    "html-minifier" : "~0.4.5",
+    "opts" : "1.2.2"
   },
   "devDependencies": {
     "async" : "~0.1.22",
     "jsdom" : "~0.2.15",
     "node-minify" : "~0.4.2",
     "request" : "~2.11.1",
-    "html-minifier" : "~0.4.5"
+    "html-minifier" : "~0.4.5",
+    "opts" : "1.2.2"
   },
   "keywords": [
     "feo","frontend","optimize"

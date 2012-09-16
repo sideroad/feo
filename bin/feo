@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+
+// Run feo.
+var fs = require('fs'),
+    opts = require('opts'),
+    config = JSON.parse(fs.readFileSync('feo.json','utf8').toString().replace(/\n/g,'')) || {};
+
+opts.parse([
+    {
+        'short': 'u',
+        'long': 'url',
+        'description': 'Target URL',
+        'value': true,
+        'required': false
+    },
+]);
+
+if( opts.get('url') ){
+	config.url = opts.get('url');
+}
+
+require('../lib/feo').cli( config );
