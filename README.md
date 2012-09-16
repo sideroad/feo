@@ -21,8 +21,8 @@ npm install -g feo
     "js" : {
         "compressor" : "yui-js",
         "ignore":[
-          "http://code.jquery.com/jquery.min.js",
-          "http://pagead2.googlesyndication.com/pagead/show_ads.js"
+          "jquery.min.js",
+          "show_ads.js"
         ],
         "noinline":true
     },

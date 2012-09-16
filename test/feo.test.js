@@ -86,7 +86,6 @@ describe('feo', function(){
           assert.equal( 10, $('script').not('.jsdom').length );
 
           feo.optimizeScript( {
-            local : true,
             dist : dist,
             js : {
               ignore :["ignore.js"]
@@ -125,7 +124,6 @@ describe('feo', function(){
 
           assert.equal( 7, $('link,style').length );
           feo.optimizeCss( {
-              local : true,
               dist : dist,
               css : {
                 ignore :["ignore.css"],
@@ -153,7 +151,6 @@ describe('feo', function(){
         dist = 'test/dist';
 
       feo.optimizeBackgroundImage( {
-          local : true,
           dist : dist,
           css : {
             ignore :["ignore.css"]
@@ -188,7 +185,6 @@ describe('feo', function(){
 
           assert.equal( 6, $('img').length );
           feo.optimizeImage( {
-              local : true,
               dist : dist,
               image : {
                 ignore :["ignore.png"]
