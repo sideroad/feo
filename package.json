@@ -1,7 +1,7 @@
 {
   "name": "feo",
   "description": "Automatically optimize front-end.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "homepage": "https://github.com/sideroad/feo",
   "author": "sideroad <sideroad.jp@gmail.com> (http://sideroad.secret.jp/)",
   "repository": {

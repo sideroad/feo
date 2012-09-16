@@ -1,20 +1,23 @@
 {
-	"url":"http://sideroad.secret.jp/plugins/jQuerySideBar/",
+	"url":"examples/path/to/html/index.html",
 	"js" : {
 		"compressor" : "yui-js",
 		"ignore":[
 		  "jquery.min.js",
 		  "show_ads.js"
 		],
-		"inline":false
+		"inline":false,
+		"root" : "examples"
 	},
 	"css" : {
 		"compressor" : "yui-css",
 		"ignore":["hoge.css"],
-		"inline":true
+		"inline":true,
+		"root" : "examples"
 	},
 	"image" : {
-        "base64" : true
+        "base64" : true,
+		"root" : "examples"
 	},
 	"dist" : "dist",
 	"clean" : true

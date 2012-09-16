@@ -13,6 +13,51 @@ describe('feo', function(){
     });
   });
 
+  describe('#resolve()', function(){
+    it('should be resolve path', function(done){
+      assert.equal(
+        'examples/js/1.js',
+        feo.resolve(
+          'examples',
+          'examples/path/to/html/index.html', 
+          '/js/1.js'
+        )
+      );
+
+      assert.equal(
+        path.resolve()+'/examples/js/1.js',
+        feo.resolve(
+          'examples',
+          'examples/path/to/html/index.html', 
+          '../../../js/1.js'
+        )
+      );
+
+      assert.equal(
+        'http://sideroad.secret.jp/js/jquery.sidebar.js',
+        feo.resolve(
+          '',
+          'http://sideroad.secret.jp/plugins/jQuerySideBar/',
+          '/js/jquery.sidebar.js'
+        )
+      );
+
+      assert.equal(
+        'http://sideroad.secret.jp/js/jquery.sidebar.js',
+        feo.resolve(
+          '',
+          'http://sideroad.secret.jp/plugins/jQuerySideBar/',
+          '../../js/jquery.sidebar.js'
+        )
+      );
+
+      done();
+
+    });
+
+
+  });
+
   describe('#isLocal()', function(){
     it('should return local', function(done){
       assert.equal( false,  feo.isLocal("http://sideroad.secret.jp/") );
@@ -40,7 +85,6 @@ describe('feo', function(){
 
           assert.equal( 10, $('script').not('.jsdom').length );
 
-          feo.init({dist:dist,clean:true});
           feo.optimizeScript( {
             local : true,
             dist : dist,
@@ -50,9 +94,6 @@ describe('feo', function(){
             url : url,
             clean:true
             }, window, function(){
-              var files = fs.readdirSync(dist);
-
-              assert.equal(2, files.length);
               assert.equal(
                 fs.readFileSync('test/expect/feo.63c826b58465ece78d6bb519beb0bad6.js', 'utf8'),
                 fs.readFileSync('test/dist/feo.63c826b58465ece78d6bb519beb0bad6.js', 'utf8')
@@ -83,25 +124,21 @@ describe('feo', function(){
           var $ = window.$;
 
           assert.equal( 7, $('link,style').length );
-          feo.init({dist:dist,clean:true});
           feo.optimizeCss( {
               local : true,
               dist : dist,
               css : {
-                ignore :["ignore.css"]
+                ignore :["ignore.css"],
               },
               url : url,
               clean:true
             }, window, function(){
-              var files = fs.readdirSync(dist);
-
-              assert.equal(2, files.length);
               assert.equal(
-                fs.readFileSync('test/expect/feo.3101d7226176f32620984be4a633e4c1.css', 'utf8'),
-                fs.readFileSync('test/dist/feo.3101d7226176f32620984be4a633e4c1.css', 'utf8')
+                fs.readFileSync('test/expect/feo.788281c251f120e5f76f0de4e9b095d6.css', 'utf8'),
+                fs.readFileSync('test/dist/feo.788281c251f120e5f76f0de4e9b095d6.css', 'utf8')
               );
 
-              assert.equal(3, $('link,style').length );
+              assert.equal(4, $('link,style').length );
               done();
             }
           );
@@ -115,7 +152,6 @@ describe('feo', function(){
       var url = 'test/src/1.css',
         dist = 'test/dist';
 
-      feo.init({dist:dist,clean:true});
       feo.optimizeBackgroundImage( {
           local : true,
           dist : dist,
@@ -151,7 +187,6 @@ describe('feo', function(){
           var $ = window.$;
 
           assert.equal( 6, $('img').length );
-          feo.init({dist:dist,clean:true});
           feo.optimizeImage( {
               local : true,
               dist : dist,
