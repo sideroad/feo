@@ -1,5 +1,6 @@
 {
-	"url":"examples/path/to/html/index.html",
+	"url":"examples/src",
+	"dist" : "examples/dist",
 	"js" : {
 		"compressor" : "yui-js",
 		"ignore":[
@@ -8,18 +9,16 @@
 		  "ignore.js"
 		],
 		"inline":false,
-		"root" : "examples"
+		"root" : "examples/src"
 	},
 	"css" : {
 		"compressor" : "yui-css",
 		"ignore":["ignore.css"],
 		"inline":true,
-		"root" : "examples"
+		"root" : "examples/src"
 	},
 	"image" : {
         "base64" : true,
-		"root" : "examples"
-	},
-	"dist" : "dist",
-	"clean" : true
+		"root" : "examples/src"
+	}
 }
