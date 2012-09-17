@@ -4,14 +4,15 @@
 		"compressor" : "yui-js",
 		"ignore":[
 		  "jquery.min.js",
-		  "show_ads.js"
+		  "show_ads.js",
+		  "ignore.js"
 		],
 		"inline":false,
 		"root" : "examples"
 	},
 	"css" : {
 		"compressor" : "yui-css",
-		"ignore":["hoge.css"],
+		"ignore":["ignore.css"],
 		"inline":true,
 		"root" : "examples"
 	},

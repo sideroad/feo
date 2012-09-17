@@ -36,6 +36,15 @@ describe('feo', function(){
       assert.equal(
         'http://sideroad.secret.jp/js/jquery.sidebar.js',
         feo.resolve(
+          'examples',
+          'examples/path/to/html/index.html', 
+          'http://sideroad.secret.jp/js/jquery.sidebar.js'
+        )
+      );
+
+      assert.equal(
+        'http://sideroad.secret.jp/js/jquery.sidebar.js',
+        feo.resolve(
           '',
           'http://sideroad.secret.jp/plugins/jQuerySideBar/',
           '/js/jquery.sidebar.js'
@@ -48,6 +57,15 @@ describe('feo', function(){
           '',
           'http://sideroad.secret.jp/plugins/jQuerySideBar/',
           '../../js/jquery.sidebar.js'
+        )
+      );
+
+      assert.equal(
+        'http://sideroad.secret.jp/js/jquery.sidebar.js',
+        feo.resolve(
+          '',
+          'http://sideroad.secret.jp/plugins/jQuerySideBar/',
+          'http://sideroad.secret.jp/js/jquery.sidebar.js'
         )
       );
 
@@ -83,7 +101,7 @@ describe('feo', function(){
           err && console.log(err);
           var $ = window.$;
 
-          assert.equal( 10, $('script').not('.jsdom').length );
+          assert.equal( 11, $('script').not('.jsdom').length );
 
           feo.optimizeScript( {
             dist : dist,
@@ -93,10 +111,12 @@ describe('feo', function(){
             url : url,
             clean:true
             }, window, function(){
+
               assert.equal(
-                fs.readFileSync('test/expect/feo.63c826b58465ece78d6bb519beb0bad6.js', 'utf8'),
-                fs.readFileSync('test/dist/feo.63c826b58465ece78d6bb519beb0bad6.js', 'utf8')
+                fs.readFileSync('test/expect/feo.4d2a13ebe2f687649ed636cf6c818b21.js', 'utf8'),
+                fs.readFileSync('test/dist/feo.4d2a13ebe2f687649ed636cf6c818b21.js', 'utf8')
               );
+
 
               assert.equal(5, $('script').not('.jsdom').length );
               done();
@@ -122,7 +142,7 @@ describe('feo', function(){
           err && console.log(err);
           var $ = window.$;
 
-          assert.equal( 7, $('link,style').length );
+          assert.equal( 8, $('link,style').length );
           feo.optimizeCss( {
               dist : dist,
               css : {
@@ -132,11 +152,11 @@ describe('feo', function(){
               clean:true
             }, window, function(){
               assert.equal(
-                fs.readFileSync('test/expect/feo.788281c251f120e5f76f0de4e9b095d6.css', 'utf8'),
-                fs.readFileSync('test/dist/feo.788281c251f120e5f76f0de4e9b095d6.css', 'utf8')
+                fs.readFileSync('test/expect/feo.c9cd3ab4b9445f6507b25cab1237f32c.css', 'utf8'),
+                fs.readFileSync('test/dist/feo.c9cd3ab4b9445f6507b25cab1237f32c.css', 'utf8')
               );
 
-              assert.equal(4, $('link,style').length );
+              assert.equal(3, $('link,style').length );
               done();
             }
           );
@@ -183,7 +203,7 @@ describe('feo', function(){
           err && console.log(err);
           var $ = window.$;
 
-          assert.equal( 6, $('img').length );
+          assert.equal( 7, $('img').length );
           feo.optimizeImage( {
               dist : dist,
               image : {
@@ -193,7 +213,7 @@ describe('feo', function(){
               clean:true
             }, window, function(){
 
-              assert.equal( 6, $('img').length );
+              assert.equal( 7, $('img').length );
               assert.equal(
                 fs.readFileSync('test/expect/feo.image.html', 'utf8'),
                 window.document.innerHTML

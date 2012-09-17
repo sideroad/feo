@@ -1,7 +1,7 @@
 {
   "name": "feo",
   "description": "Automatically optimize front-end.",
-  "version": "0.2.1",
+  "version": "0.2.3",
   "homepage": "https://github.com/sideroad/feo",
   "author": "sideroad <sideroad.jp@gmail.com> (http://sideroad.secret.jp/)",
   "repository": {
@@ -25,7 +25,7 @@
     "node": "*"
   },
   "scripts": {
-    "test": "feo"
+    "test": "mocha"
   },
   "dependencies": {
     "async" : "~0.1.22",
@@ -36,6 +36,7 @@
     "opts" : "1.2.2"
   },
   "devDependencies": {
+    "mocha": "*",
     "async" : "~0.1.22",
     "jsdom" : "~0.2.15",
     "node-minify" : "~0.4.2",
