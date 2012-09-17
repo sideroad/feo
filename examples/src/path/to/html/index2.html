@@ -1,0 +1,41 @@
+<!DOCTYPE>
+<html>
+<head>
+  <link rel="stylesheet" href="/css/1.css" />
+  <script src="/js/1.js"></script>
+  <style>
+    #s3{
+      background: #000000 url("../../../images/3.png");
+    }
+    #s4{
+      background-image: url(http://sideroad.secret.jp/img/foot_mark.png);
+    }
+  </style>
+</head>
+<body>
+  <script type="text/javascript">
+  <!--//
+  (function(){
+    console.log('inline');
+  })();
+  //-->
+  </script>
+  <script type="text/javascript" data-feo="ignore" >
+  (function(){
+    console.log('this script should be ignore');
+  })();
+  </script>
+  <script type="text/template" >
+  (function(){
+    console.log('this script should be ignore');
+  })();
+  </script>
+  <img src="/images/1.png" />
+
+  <div id="s1"></div>
+  <div id="s2"></div>
+  <div id="s3"></div>
+  <div id="s4"></div>
+
+</body>
+</html>

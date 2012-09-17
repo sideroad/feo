@@ -17,32 +17,34 @@ npm install -g feo
 1.Prepare feo.json
 ```js
 {
-    "url":"http://sideroad.secret.jp/plugins/jQueryFloatingMessage/",
+    "url":"examples/src",
+    "dist" : "examples/dist",
     "js" : {
         "compressor" : "yui-js",
         "ignore":[
-          "jquery.min.js",
-          "show_ads.js"
+          "ignore.js"
         ],
-        "noinline":true
+        "inline":false,
+        "root" : "examples/src"
     },
     "css" : {
         "compressor" : "yui-css",
-        "ignore":["hoge.css"],
-        "noinline":false
+        "ignore":[
+          "ignore.css"
+        ],
+        "inline":true,
+        "root" : "examples/src"
     },
-    "html" : {
-        "dist" : "dist",
-        "clean" : true
+    "image" : {
+        "base64" : true,
+        "root" : "examples/src"
     }
 }
 ```
-
-2.Execute feo. Feo.js outputs html, js and css files to dist directory.
+2.Execute feo. Feo generates html, js and css files to dist directory.
 ```sh
 feo
 ```
-
 ##Why output script, css files name contains hash?
 * You can set long expire time of contents.
 
