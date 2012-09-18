@@ -1,13 +1,15 @@
 var assert = require("assert"),
-    feo = require("../lib/feo"),
+    libpath = process.env['YOUR_LIBRARY_NAME_COV'] ? '../lib-cov' : '../lib',
+    feo = require(libpath + '/feo.js'),
     jsdom = require("jsdom"),
     fs = require("fs"),
     path = require("path");
 
+
 describe('feo', function(){
   describe('#init()', function(){
     it('should be cleaning dist', function(done){
-      feo.init({dist:'dist',clean:true});
+      feo.init({dist:'dist',log:false});
       assert.equal(0, fs.readdirSync( 'dist' ).length);
       done();
     });
@@ -109,7 +111,8 @@ describe('feo', function(){
               ignore :["ignore.js"]
             },
             url : url,
-            clean:true
+            clean:true,
+            log : false
             }, window, function(){
 
               assert.equal(
@@ -149,7 +152,8 @@ describe('feo', function(){
                 ignore :["ignore.css"],
               },
               url : url,
-              clean:true
+              clean:true,
+              log : false
             }, window, function(){
               assert.equal(
                 fs.readFileSync('test/expect/feo.c9cd3ab4b9445f6507b25cab1237f32c.css', 'utf8'),
@@ -176,7 +180,8 @@ describe('feo', function(){
             ignore :["ignore.css"]
           },
           url : url,
-          clean:true
+          clean:true,
+          log : false
         }, 'test/src/css.html', fs.readFileSync(url, 'utf8'), function( err, body ){
           assert.equal(
             fs.readFileSync('test/expect/feo.background.image.css', 'utf8'),
@@ -210,7 +215,8 @@ describe('feo', function(){
                 ignore :["ignore.png"]
               },
               url : url,
-              clean:true
+              clean:true,
+              log : false
             }, window, function(){
 
               assert.equal( 7, $('img').length );
