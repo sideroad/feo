@@ -11,6 +11,9 @@
 		"inline":false,
 		"root" : "examples/src"
 	},
+	"backgroundImage" : {
+		"base64" : true
+	},
 	"css" : {
 		"compressor" : "yui-css",
 		"ignore":["ignore.css"],

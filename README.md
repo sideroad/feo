@@ -50,7 +50,8 @@ feo
 
 ##Next
 * For the page which is not UTF-8 encoding
-* Optimize html on local files
+* Resolve CSS Import
+* Contents Lazy load
 
 ##Dependencies with amazing library
 * [async](https://github.com/caolan/async)
