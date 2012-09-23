@@ -35,6 +35,9 @@ npm install -g feo
         "inline":true,
         "root" : "examples/src"
     },
+    "backgroundImage" : {
+        "base64" : true,
+    },
     "image" : {
         "base64" : true,
         "root" : "examples/src"

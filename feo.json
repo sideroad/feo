@@ -4,11 +4,9 @@
 	"js" : {
 		"compressor" : "yui-js",
 		"ignore":[
-		  "jquery.min.js",
-		  "show_ads.js",
 		  "ignore.js"
 		],
-		"inline":false,
+		"inline":true,
 		"root" : "examples/src"
 	},
 	"backgroundImage" : {
