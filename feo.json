@@ -21,5 +21,6 @@
 	"image" : {
         "base64" : true,
 		"root" : "examples/src"
-	}
+	},
+	"logLevel" : 3
 }

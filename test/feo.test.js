@@ -5,6 +5,7 @@ var assert = require("assert"),
     fs = require("fs"),
     path = require("path");
 
+feo.logLevel = 3;
 
 describe('feo', function(){
   describe('#init()', function(){
@@ -21,7 +22,7 @@ describe('feo', function(){
         'examples/js/1.js',
         feo.resolve(
           'examples',
-          'examples/path/to/html/index.html', 
+          'examples/path/to/html/index.html',
           '/js/1.js'
         )
       );
@@ -30,7 +31,7 @@ describe('feo', function(){
         path.resolve()+'/examples/js/1.js',
         feo.resolve(
           'examples',
-          'examples/path/to/html/index.html', 
+          'examples/path/to/html/index.html',
           '../../../js/1.js'
         )
       );
@@ -39,7 +40,7 @@ describe('feo', function(){
         'http://sideroad.secret.jp/js/jquery.sidebar.js',
         feo.resolve(
           'examples',
-          'examples/path/to/html/index.html', 
+          'examples/path/to/html/index.html',
           'http://sideroad.secret.jp/js/jquery.sidebar.js'
         )
       );
@@ -95,7 +96,7 @@ describe('feo', function(){
 
       this.timeout(5000);
       jsdom.env({
-          html : url, 
+          html : url,
           scripts : [
             'http://code.jquery.com/jquery-1.8.0.min.js'
         ],
@@ -137,7 +138,7 @@ describe('feo', function(){
 
       this.timeout(5000);
       jsdom.env({
-          html : url, 
+          html : url,
           scripts : [
             'http://code.jquery.com/jquery-1.8.0.min.js'
         ],
@@ -149,7 +150,7 @@ describe('feo', function(){
           feo.optimizeCss( {
               dist : dist,
               css : {
-                ignore :["ignore.css"],
+                ignore :["ignore.css"]
               },
               url : url,
               clean:true,
@@ -200,7 +201,7 @@ describe('feo', function(){
 
       this.timeout(5000);
       jsdom.env({
-          html : url, 
+          html : url,
           scripts : [
             'http://code.jquery.com/jquery-1.8.0.min.js'
         ],
