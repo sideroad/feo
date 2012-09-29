@@ -1,7 +1,7 @@
 {
   "name": "feo",
   "description": "Automatically optimize front-end.",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "homepage": "https://github.com/sideroad/feo",
   "author": "sideroad <sideroad.jp@gmail.com> (http://sideroad.secret.jp/)",
   "repository": {
@@ -35,7 +35,8 @@
     "html-minifier": "~0.4.5",
     "wrench": "~1.3.9",
     "opts": "~1.2.2",
-    "underscore": "~1.3.3"
+    "underscore": "~1.3.3",
+    "iconv-jp": "~1.1.3"
   },
   "devDependencies": {
     "mocha": "*",
@@ -46,7 +47,8 @@
     "html-minifier": "~0.4.5",
     "wrench": "~1.3.9",
     "opts": "~1.2.2",
-    "underscore": "~1.3.3"
+    "underscore": "~1.3.3",
+    "iconv-jp": "~1.1.3"
   },
   "keywords": [
     "feo",
