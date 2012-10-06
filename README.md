@@ -1,5 +1,8 @@
 #Automatically optimize the web page faster!!
 
+##Supports
+Now, Windows and Ubuntu not supported because of node-iconv cant install on these OS. 
+
 ##Optimize principle
 Manual optimizing front end is very sucks.
 I want to simplify that. only one command.

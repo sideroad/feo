@@ -2,45 +2,46 @@
 
 // Run feo.
 var fs = require('fs'),
-    opts = require('opts'),
-    config = fs.existsSync('feo.json') ? JSON.parse(fs.readFileSync('feo.json','utf8').toString().replace(/\n/g,'')) || {}
-                                       : {
-                                            "url":"src",
-                                            "dist" : "dist",
-                                            "js" : {
-                                                "compressor" : "yui-js",
-                                                "ignore":[],
-                                                "inline":true,
-                                                "root" : "src"
-                                            },
-                                            "backgroundImage" : {
-                                                "base64" : true
-                                            },
-                                            "css" : {
-                                                "compressor" : "yui-css",
-                                                "ignore":[],
-                                                "inline":true,
-                                                "root" : "src"
-                                            },
-                                            "image" : {
-                                                "base64" : true,
-                                                "root" : "src"
-                                            },
-                                            "logLevel" : 3
-                                        };
+  opts = require('opts'),
+  config = fs.existsSync('feo.json') ?
+    JSON.parse(fs.readFileSync('feo.json','utf8').toString().replace(/\n/g,'')) || {} :
+    {
+      "url":"src",
+      "dist" : "dist",
+      "js" : {
+          "compressor" : "yui-js",
+          "ignore":[],
+          "inline":true,
+          "root" : "src"
+      },
+      "backgroundImage" : {
+          "base64" : true
+      },
+      "css" : {
+          "compressor" : "yui-css",
+          "ignore":[],
+          "inline":true,
+          "root" : "src"
+      },
+      "image" : {
+          "base64" : true,
+          "root" : "src"
+      },
+      "logLevel" : 3
+    };
 
 opts.parse([
-    {
-        'short': 'u',
-        'long': 'url',
-        'description': 'Target URL',
-        'value': true,
-        'required': false
-    }
+  {
+    'short': 'u',
+    'long': 'url',
+    'description': 'Target URL',
+    'value': true,
+    'required': false
+  }
 ]);
 
 if( opts.get('url') ){
-	config.url = opts.get('url');
+  config.url = opts.get('url');
 }
 
 require('../lib/feo').cli( config );
