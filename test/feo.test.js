@@ -99,21 +99,21 @@ describe('feo', function(){
           html : url,
           scripts : [
             'http://code.jquery.com/jquery-1.8.0.min.js'
-        ],
-        done : function(err, window) {
-          err && console.log(err);
-          var $ = window.$;
+          ],
+          done : function(err, window) {
+            err && console.log(err);
+            var $ = window.$;
 
-          assert.equal( 11, $('script').not('.jsdom').length );
+            assert.equal( 11, $('script').not('.jsdom').length );
 
-          feo.optimizeScript( {
-            dist : dist,
-            js : {
-              ignore :["ignore.js"]
-            },
-            url : url,
-            clean:true,
-            log : false
+            feo.optimizeScript( {
+              dist : dist,
+              js : {
+                ignore :["ignore.js"]
+              },
+              url : url,
+              clean:true,
+              log : false
             }, window, function(){
 
               assert.equal(
@@ -124,10 +124,9 @@ describe('feo', function(){
 
               assert.equal(5, $('script').not('.jsdom').length );
               done();
-            }
-          );
-        }
-      });
+            });
+          }
+        });
     });
   });
 
@@ -141,13 +140,13 @@ describe('feo', function(){
           html : url,
           scripts : [
             'http://code.jquery.com/jquery-1.8.0.min.js'
-        ],
-        done : function(err, window) {
-          err && console.log(err);
-          var $ = window.$;
+          ],
+          done : function(err, window) {
+            err && console.log(err);
+            var $ = window.$;
 
-          assert.equal( 8, $('link,style').length );
-          feo.optimizeCss( {
+            assert.equal( 8, $('link,style').length );
+            feo.optimizeCss( {
               dist : dist,
               css : {
                 ignore :["ignore.css"]
@@ -163,10 +162,9 @@ describe('feo', function(){
 
               assert.equal(3, $('link,style').length );
               done();
-            }
-          );
-        }
-      });
+            });
+          }
+        });
     });
   });
 
