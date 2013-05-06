@@ -22,5 +22,5 @@
         "base64" : true,
 		"root" : "examples/src"
 	},
-	"logLevel" : 3
+	"logLevel" : 1
 }

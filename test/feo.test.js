@@ -89,6 +89,32 @@ describe('feo', function(){
     });
   });
 
+  describe('#getCssCharset()', function(){
+    it('should return css charset', function(){
+      var css;
+      css = fs.readFileSync('test/src/charset.nocharset.css', 'utf8');
+      assert.equal( undefined, feo.getCssCharset(css));
+      css = fs.readFileSync('test/src/charset.utf8.css', 'utf8');
+      assert.equal( 'UTF-8', feo.getCssCharset(css));
+      css = fs.readFileSync('test/src/charset.sjis.css', 'utf8');
+      assert.equal( 'Shift_JIS', feo.getCssCharset(css));
+    });
+  });
+
+  describe('#getImportCssUrl()', function(){
+    it('should be return import css url', function(){
+      var css = fs.readFileSync('test/src/import.css', 'utf8');
+      assert.deepEqual( [__dirname+'/src/1.css', __dirname+'/src/2.css'], feo.getImportCssUrl('', 'test/src/import.css', css));
+    });
+  });
+
+  describe('#removeImportExpression()', function(){
+    it('should be return css contents which was removed import expression', function(){
+      var css = fs.readFileSync('test/src/import.css', 'utf8');
+      assert.equal( "div{font-size: 1em;}", feo.removeImportExpression(css));
+    });
+  });
+
   describe('#optimizeScript()', function(){
     it('should concat and minify script files', function(done){
       var url = 'test/src/script.html',
@@ -98,7 +124,7 @@ describe('feo', function(){
       jsdom.env({
           html : url,
           scripts : [
-            'http://code.jquery.com/jquery-1.8.0.min.js'
+            '../../lib/jquery-1.8.0.min.js'
           ],
           done : function(err, window) {
             err && console.log(err);
@@ -139,7 +165,7 @@ describe('feo', function(){
       jsdom.env({
           html : url,
           scripts : [
-            'http://code.jquery.com/jquery-1.8.0.min.js'
+            '../../lib/jquery-1.8.0.min.js'
           ],
           done : function(err, window) {
             err && console.log(err);
@@ -201,7 +227,7 @@ describe('feo', function(){
       jsdom.env({
           html : url,
           scripts : [
-            'http://code.jquery.com/jquery-1.8.0.min.js'
+            '../../lib/jquery-1.8.0.min.js'
         ],
         done : function(err, window) {
           err && console.log(err);
